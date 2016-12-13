@@ -11,8 +11,10 @@
     "debug": "~2.2.0",
     "express": "~4.14.0",
     "hbs": "~4.0.1",
+    "ioredis": "^2.4.2",
     "less-middleware": "~2.2.0",
     "morgan": "~1.7.0",
+    "node-uuid": "^1.4.7",
     "serve-favicon": "~2.3.0"
   }
 }

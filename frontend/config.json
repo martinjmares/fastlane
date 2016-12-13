@@ -1,0 +1,10 @@
+{
+  "development": {
+    "redisPort": 6379,
+    "redisHost": "127.0.0.1"
+  },
+  "production": {
+    "redisPort": 6379,
+    "redisHost": "who-knows"
+  }
+}
