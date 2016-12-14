@@ -5,6 +5,6 @@
   },
   "production": {
     "redisPort": 6379,
-    "redisHost": "10.163.40.196"
+    "redisHost": "redis-main"
   }
 }

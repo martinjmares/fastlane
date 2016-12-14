@@ -1,1 +1,1 @@
-docker build -t fastlane/redis-main:v1 .
+docker build -t gcr.io/fastlane-mmar/redis-main:v1 .
