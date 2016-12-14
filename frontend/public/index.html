@@ -13,23 +13,18 @@
     <title>FastLane - The best supermarket navigator</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <link href="/stylesheets/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
 </head>
 
 <body>
@@ -43,12 +38,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">FastLane</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right">
                 <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
+                    <input type="text" placeholder="Username" class="form-control">
                 </div>
                 <div class="form-group">
                     <input type="password" placeholder="Password" class="form-control">
@@ -62,9 +57,11 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <h1>FastLane - Supermarket Navigator</h1>
+        <p>The only real goal of this project is to learn GoogleCloud usage and a lot (a lot, lot, lot) Javascript and Node.JS technologies.</p>
+        <p>The main porpouse of this page is to have something in frontend and for me to try Angular library. If something works here, it is most likely just consequence.
+        I am using cloud service mostly by curl. :-)</p>
+        <p>See sources on <a href="https://github.com/martinjmares/fastlane">GitHub</a>. </p>
     </div>
 </div>
 
@@ -72,37 +69,33 @@
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2>Frontend service</h2>
+            <p>This page and whole REST API is served by Node.JS application (service) <i>FastLane.Frontend</i>. This
+                service is deployed in <a href="http://kubernetes.io/">Kubernetes</a> container on GoogleCloud. The
+                container is balanced.</p>
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2>Shared data and configuration</h2>
+            <p>Shared data (shared between all users and service instances) are stored in (potentially) replicated Redis instance(s).</p>
+            <p>Characteristics of these data is, that it is much more often read then write.</p>
+            <p>Real content consists of: Dynamic configuration, User-list, and other shared content.</p>
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2>User state</h2>
+            <p>Most dynamic data are dedicated per user. These data are managed by custom sharded service. It gave me potential
+            to start more containers when count of actibve users increased.</p>
+            <p>Custom sharding logic give me control over its strategy. I can distribute users based on access frequency, etc.</p>
+            <p>Note that this is just demo for me. Policy is primitive (almost none). Service is represented by another Redis
+            instance(s) for now. I just don't want to write another API. :-)</p>
         </div>
     </div>
 
     <hr>
 
     <footer>
-        <p>&copy; 2016 Company, Inc.</p>
+        <p>&copy; Martin.Jacek.Mares</p>
     </footer>
 </div> <!-- /container -->
 
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-<script src="../../dist/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

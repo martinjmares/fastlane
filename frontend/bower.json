@@ -1,0 +1,7 @@
+{
+  "name": "FastLane",
+  "description": "The best and only supermarket navigator.",
+  "dependencies": {
+    "bootstrap": "3.3.7"
+  }
+}

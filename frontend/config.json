@@ -5,6 +5,6 @@
   },
   "production": {
     "redisPort": 6379,
-    "redisHost": "who-knows"
+    "redisHost": "127.0.0.1"
   }
 }
